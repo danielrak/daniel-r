@@ -22,7 +22,7 @@ listing:
 ::: {.hero-body}
 [Data scientist and project lead, DEPP]{.hero-role}
 
-Hi. I'm Daniel, a data scientist and data project lead at DEPP, the statistical directorate of the French Ministry of Education. The data project I work on is [IDEE](https://www.idee-education.fr/), Innovations, Données et Expérimentations en Éducation, a programme on innovations, data and experiments in education. I did a PhD in economics, which is where my interest in causal inference comes from. Most of my code is R, and I write packages that make empirical work easier to check and to reproduce.
+Hi. I'm Daniel, a data scientist and project lead at DEPP, the statistical directorate of the French Ministry of Education. The data project I work on is [IDEE](https://www.idee-education.fr/), Innovations, Data and Experiments in Education. I did a PhD in economics, which is where my interest in causal inference comes from. Most of my code is R, and I write packages that make empirical work easier to check and to reproduce.
 :::
 
 ![](assets/profile.jpg){.hero-photo fig-alt="Portrait of Daniel Rakotomalala" width=120 height=135}

@@ -29,7 +29,7 @@ website:
   page-navigation: false
   reader-mode: false
   navbar:
-    pinned: false
+    pinned: true
     collapse-below: md
     left:
       - text: Home

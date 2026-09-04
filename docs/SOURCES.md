@@ -21,8 +21,8 @@ Rule 1 of `CLAUDE.md`: every date, title, employer, publication, package version
 
 | Claim | Source |
 | --- | --- |
-| "a data scientist and data project lead at DEPP, the statistical directorate of the French Ministry of Education" | CV; gloss from the brief §9. Note that the page says "data project lead" here while the role line above it, the meta description and the JSON-LD all say "project lead"; Daniel wrote the paragraph and has been asked which wording should win. |
-| The data project I work on is IDEE, Innovations, Données et Expérimentations en Éducation, a programme on innovations, data and experiments in education | CV ("Chef de projet Innovations, Données et Expérimentations en Education (IDEE)"); wording written by Daniel, answer of 4 Sep 2026, second wave |
+| "a data scientist and project lead at DEPP, the statistical directorate of the French Ministry of Education" | CV; gloss from the brief §9. Daniel's draft read "data project lead"; he chose "project lead" on 4 Sep 2026 so that the intro, the role line, the meta description and the JSON-LD all state one title. |
+| "The data project I work on is IDEE, Innovations, Data and Experiments in Education" | CV ("Chef de projet Innovations, Données et Expérimentations en Education (IDEE)") for the role and the French name of the programme. The English expansion is the programme's official English name, per Daniel's answer of 4 Sep 2026; it is used instead of the French one, so the site names IDEE once and in English. |
 | Link https://www.idee-education.fr/ on the word IDEE | CV (hyperlink on "IDEE"); not fetched (host blocked from the build environment) |
 | PhD in economics; interest in causal inference | CV (Doctorat en sciences économiques; "Evaluation des politiques publiques / évaluation d'impact : essais randomisés contrôlés, appariement, doubles différences, variables instrumentales, régressions sur une discontinuité"); sentence from the brief's calibration sample |
 | Most code in R; packages that make empirical work easier to check and reproduce | CV ("Niveau avancé sur R – plus de 8 ans"); scrutr and genproc DESCRIPTION files |
@@ -65,6 +65,7 @@ Rule 1 of `CLAUDE.md`: every date, title, employer, publication, package version
 | Site URL https://daniel-r.com | brief §2; domain not yet bought (answer, 4 Sep 2026) |
 | Fonts Source Serif 4 and Source Sans 3 under SIL OFL 1.1 | `LICENSE` files in the Fontsource packages `@fontsource/source-serif-4@5.3.0` and `@fontsource/source-sans-3@5.3.0`, copied to `assets/fonts/` |
 | Netlify legal identity for the legal page | not yet obtained; netlify.com was blocked in the build environment; to be fetched once the network policy allows it |
+| The CV published at `/cv/Daniel-Rakotomalala-CV-fr.pdf` names the move off SAS, the CSNS technical framing and the study with the Ministry of Justice, none of which appears in the site's own copy | Daniel's answer of 4 Sep 2026: the CV's content is public information and the file is published as it stands. Rule 2 governs the copy written for the site, which continues to name only the role, the IDEE programme, the J-PAL Europe partnership, the public catalogue and the remote-access platform. |
 
 ## Not verified
 
