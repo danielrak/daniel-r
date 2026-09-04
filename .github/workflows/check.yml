@@ -1,0 +1,27 @@
+# Renders the site on every pull request and fails if Quarto prints a
+# warning, so that main stays deployable.
+on:
+  pull_request:
+
+name: Render check
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.10.18
+
+      - name: Render
+        run: quarto render 2>&1 | tee render.log
+
+      - name: Fail on warnings
+        run: |
+          if grep -Ei "warn(ing)?:" render.log; then
+            echo "quarto render printed a warning"; exit 1
+          fi

@@ -1,0 +1,28 @@
+# Renders the site and publishes it to Netlify on every push to main, and on
+# demand from the Actions tab. Follows the Quarto documentation
+# ("Publishing → Netlify → GitHub Action"): the publish action reads the
+# site id from _publish.yml and the token from the NETLIFY_AUTH_TOKEN secret.
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.10.18
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: netlify
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
