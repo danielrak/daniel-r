@@ -1,0 +1,356 @@
+/*-- scss:defaults --*/
+
+// Palette (mirrors _brand.yml; the brand layer sets the Bootstrap roles,
+// these names are used in the rules below).
+$dr-paper: #FFFFFF;
+$dr-ink: #1F1F1F;
+$dr-muted: #5C5C5C;
+$dr-rule: #D0D3D8;
+$dr-band: #F2F4F7;
+$dr-navy: #1F3D7A;
+$dr-navy-dark: #162D5B;
+
+// Type: serif for reading, sans for signposting.
+$dr-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+$dr-sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-base: $dr-serif;
+$font-family-sans-serif: $dr-sans;
+$font-family-monospace: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+$headings-font-family: $dr-sans;
+$headings-font-weight: 700;
+$headings-line-height: 1.2;
+$font-size-base: 1.0625rem;
+$line-height-base: 1.6;
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.375rem;
+$h3-font-size: 1.125rem;
+$h4-font-size: 1rem;
+
+// Colours and shapes.
+$body-bg: $dr-paper;
+$body-color: $dr-ink;
+$primary: $dr-navy;
+$link-color: $dr-navy;
+$link-hover-color: $dr-navy-dark;
+$link-decoration: underline;
+$border-color: $dr-rule;
+$navbar-bg: $dr-paper;
+$navbar-fg: $dr-ink;
+$navbar-hl: $dr-navy;
+$footer-bg: $dr-band;
+$footer-fg: $dr-muted;
+$btn-border-radius: 0;
+$btn-font-weight: 600;
+$card-border-radius: 0;
+$card-border-width: 0;
+$card-bg: $dr-band;
+$enable-shadows: false;
+$enable-gradients: false;
+
+// Width of the text column plus its side padding: header and footer content
+// align on it.
+$dr-column: calc(760px + 3rem);
+
+/*-- scss:rules --*/
+
+// Self-hosted fonts, declared here so that font-display is set (the brand
+// layer emits the same faces without it; the later declaration wins).
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/assets/fonts/source-serif-4-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("/assets/fonts/source-serif-4-latin-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/assets/fonts/source-sans-3-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/assets/fonts/source-sans-3-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/assets/fonts/source-sans-3-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Base -------------------------------------------------------------------
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  &:hover { text-decoration-thickness: 2px; }
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid $dr-navy;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+h1, h2, h3, h4 { color: $dr-ink; }
+
+// Section headings: a short navy rule above, nothing below.
+h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0;
+  border-top: 3px solid $dr-navy;
+  border-bottom: 0;
+  display: inline-block;
+  min-width: 16rem;
+}
+
+// Quarto reserves the space of the header and footer with an inline style
+// once the page has loaded (100vh minus their heights); the same values here
+// avoid a layout shift. Re-measure if the header or footer changes height.
+#quarto-content { min-height: calc(100vh - 181px); }
+@media (max-width: 47.99rem) {
+  #quarto-content { min-height: calc(100vh - 297px); }
+}
+
+// Navigation bar: white, 3 px navy rule on top, hairline under, content
+// aligned on the text column -------------------------------------------------
+
+.navbar {
+  border-top: 3px solid $dr-navy;
+  border-bottom: 1px solid $dr-rule;
+  font-family: $dr-sans;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+
+  > .container-fluid { max-width: $dr-column; margin: 0 auto; }
+  .navbar-brand { font-weight: 700; font-size: 1.0625rem; color: $dr-ink; }
+  .nav-link {
+    font-weight: 600;
+    color: $dr-ink;
+    &:hover { color: $dr-navy; }
+    &.active { color: $dr-navy; box-shadow: 0 2px 0 0 $dr-navy; }
+  }
+  .dr-icon { vertical-align: -0.2em; }
+}
+
+// Title block of the inner pages ------------------------------------------
+
+#title-block-header {
+  margin-bottom: 2rem;
+  .description { font-family: $dr-sans; color: $dr-muted; }
+  .quarto-categories .quarto-category {
+    font-family: $dr-sans;
+    color: $dr-muted;
+    border-color: $dr-rule;
+    opacity: 1;
+  }
+}
+
+// Home: hero. Quarto hoists the first h1 into its title block and wraps the
+// rest of the page in a section; that section becomes a two-column grid with
+// the text on the left and the photo on the right, pulled up so that its top
+// is level with the name.
+
+section.level1:has(> p > img.hero-photo) {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 2rem;
+  align-items: start;
+
+  > * { grid-column: 1 / -1; }
+  > h1, > header { grid-column: 1; grid-row: 1; margin: 0 0 0.35rem; padding: 0; border: 0; }
+  > .hero-body { grid-column: 1; grid-row: 2; }
+  > p:has(> img.hero-photo) { grid-column: 2; grid-row: 1 / span 2; margin: 0.5rem 0 0; }
+}
+
+.hero-role {
+  font-family: $dr-sans;
+  color: $dr-muted;
+  font-size: 1.125rem;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.hero-photo {
+  width: 120px;
+  height: 135px;
+  object-fit: cover;
+  border: 1px solid $dr-rule;
+  display: block;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-family: $dr-sans;
+
+  .btn { padding: 0.55rem 1.1rem; }
+  .btn-primary { color: #fff; background: $dr-navy; border-color: $dr-navy; }
+  .btn-primary:hover { background: $dr-navy-dark; border-color: $dr-navy-dark; }
+  .btn-outline-primary { color: $dr-navy; border-color: $dr-navy; }
+  .btn-outline-primary:hover { background: $dr-band; color: $dr-navy; }
+  .quiet { color: $dr-ink; font-weight: 600; }
+}
+
+// Home: the timeline, drawn as a ruled table ------------------------------
+
+.timeline {
+  border-top: 1px solid $dr-rule;
+  margin-top: 0;
+
+  .timeline-entry {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 0 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid $dr-rule;
+  }
+  .when {
+    font-family: $dr-sans;
+    font-weight: 600;
+    color: $dr-navy;
+    font-variant-numeric: tabular-nums;
+    border-right: 1px solid $dr-rule;
+    padding-top: 0.15rem;
+    p { margin: 0; }
+  }
+  .what {
+    h3 { margin: 0 0 0.25rem; font-size: $h3-font-size; }
+    .org {
+      display: block;
+      font-family: $dr-sans;
+      color: $dr-muted;
+      margin-bottom: 0.25rem;
+    }
+    p { margin: 0; }
+    p + p { margin-top: 0.25rem; }
+  }
+}
+
+// Project cards (custom listing template includes/listing-grid.ejs) --------
+
+.dr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+
+  .quarto-grid-item.card {
+    border-top: 3px solid $dr-navy;
+    background: $dr-band;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .quarto-grid-item .card-body { padding: 1rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.35rem; }
+  .quarto-grid-item h3.card-title.listing-title,
+  .quarto-grid-item h3.card-title.listing-title a {
+    font-family: $dr-sans;
+    font-weight: 700;
+    font-size: $h3-font-size;
+    line-height: 1.25;
+    margin: 0;
+    a { color: $dr-ink; text-decoration: none; }
+    a:hover { text-decoration: underline; text-decoration-color: $dr-navy; }
+  }
+  .quarto-grid-item .card-text.listing-description { margin: 0; font-size: $font-size-base; }
+  .quarto-grid-item .listing-categories {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-family: $dr-sans;
+    font-size: 0.9375rem;
+    color: $dr-muted;
+    display: block;
+    .listing-category {
+      display: inline;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      background: none;
+      text-transform: none;
+      font-size: inherit;
+      font-weight: 400;
+      color: $dr-muted;
+      opacity: 1;
+      cursor: text;
+    }
+    .listing-category:not(:last-child)::after { content: ",\00a0"; }
+  }
+}
+
+// Contact strip ------------------------------------------------------------
+
+.contact-strip {
+  border-top: 1px solid $dr-rule;
+  border-bottom: 1px solid $dr-rule;
+  padding: 1.25rem 0;
+  margin-top: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  font-family: $dr-sans;
+
+  .contact-label { color: $dr-muted; }
+  a:empty { display: none; }
+}
+
+// Footer band, content aligned on the text column ---------------------------
+
+footer.footer {
+  background: $dr-band;
+  border-top: 1px solid $dr-rule;
+  font-family: $dr-sans;
+  font-size: 0.9375rem;
+  color: $dr-muted;
+  .nav-footer { max-width: $dr-column; margin: 0 auto; padding: 1.5rem 1.5rem 2.25rem; }
+  a { color: $dr-muted; }
+  .dr-icon { vertical-align: -0.2em; }
+}
+
+// Small screens ----------------------------------------------------------------
+
+@media (max-width: 47.99rem) {
+  section.level1:has(> p > img.hero-photo) {
+    grid-template-columns: 1fr;
+    > p:has(> img.hero-photo) { grid-column: 1; grid-row: 1; margin: 0 0 1rem; }
+    > h1, > header { grid-row: 2; }
+    > .hero-body { grid-row: 3; }
+  }
+  .hero-photo { width: 96px; height: 108px; }
+  .timeline .timeline-entry { grid-template-columns: 1fr; gap: 0.25rem 0; }
+  .timeline .when { border-right: 0; }
+  .dr-grid { grid-template-columns: 1fr; }
+  h2 { min-width: 0; }
+}
+
+// Motion: colour transitions only, none when the user asks for none ----------
+
+@media (prefers-reduced-motion: no-preference) {
+  a, .btn { transition: background-color 0.15s ease, color 0.15s ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
