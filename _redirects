@@ -1,0 +1,18 @@
+# Netlify redirects. Copied into _site/ through project.resources in _quarto.yml.
+# Syntax: from  to  status  (see https://docs.netlify.com/routing/redirects/)
+
+# www is an alias of the apex; the apex is canonical.
+https://www.daniel-r.com/*  https://daniel-r.com/:splat  301!
+
+# Directory URLs are canonical; the index.html forms redirect to them.
+/index.html            /              301
+/:a/index.html         /:a/           301
+/:a/:b/index.html      /:a/:b/        301
+
+# Reserved paths for future sub-sites (BRIEF_CLAUDE_CODE.md §14). Uncomment
+# a line only when its target exists; never create local pages at these paths.
+# /blog/*   https://blog.daniel-r.com/:splat   301
+# /talks/*  https://talks.daniel-r.com/:splat  301
+# /scrutr/*  https://danielrak.github.io/scrutr/:splat  301
+# /genproc/*  https://danielrak.github.io/genproc/:splat  301
+# /cryptropen/*  https://danielrak.github.io/cryptRopen/:splat  301
