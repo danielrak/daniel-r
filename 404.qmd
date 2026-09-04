@@ -1,0 +1,7 @@
+---
+title: "Page not found"
+description: "There is nothing at this address on daniel-r.com."
+canonical-url: false
+---
+
+There is nothing at this address. The pages that exist are [Home](/), [About](/about/), [Projects](/projects/) and [Contact](/contact/).

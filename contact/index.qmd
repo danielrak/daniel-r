@@ -1,0 +1,9 @@
+---
+title: "Contact"
+description: "How to reach Daniel Rakotomalala: LinkedIn, GitHub, email and phone."
+canonical-url: https://daniel-r.com/contact/
+---
+
+The quickest ways to reach me are [LinkedIn](https://www.linkedin.com/in/daniel-r-807192134) and [GitHub](https://github.com/danielrak); email and phone are below.
+
+{{< include ../includes/contact-links.html >}}

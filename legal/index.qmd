@@ -1,0 +1,8 @@
+---
+title: "Mentions légales"
+description: "Mentions légales du site daniel-r.com : éditeur, directeur de la publication, hébergeur, données personnelles, propriété intellectuelle."
+canonical-url: https://daniel-r.com/legal/
+lang: fr
+---
+
+Page en cours de rédaction.

@@ -1,0 +1,18 @@
+---
+title: "Projects"
+description: "Daniel Rakotomalala's projects: the R packages scrutr, genproc and cryptRopen, and a PhD thesis in the economics of education."
+canonical-url: https://daniel-r.com/projects/
+listing:
+  - id: projects
+    contents: "*/index.qmd"
+    type: custom
+    template: ../includes/listing-grid.ejs
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+---
+
+Three R packages and a thesis; each page says what the work is, why it exists, how it is built, where it stands and what I would change.
+
+::: {#projects}
+:::

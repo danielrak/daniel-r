@@ -1,0 +1,120 @@
+---
+pagetitle: "Daniel Rakotomalala"
+description: "Data scientist and project lead at DEPP, the statistical directorate of the French Ministry of Education. PhD in economics; author of the R packages scrutr, genproc and cryptRopen."
+canonical-url: https://daniel-r.com/
+image: assets/og-image.png
+open-graph:
+  title: "Daniel Rakotomalala"
+twitter-card:
+  title: "Daniel Rakotomalala"
+listing:
+  - id: selected-projects
+    contents: "projects/*/index.qmd"
+    type: custom
+    template: includes/listing-grid.ejs
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+---
+
+# Daniel Rakotomalala {.hero-name .unnumbered .unlisted}
+
+::: {.hero-body}
+[Data scientist and project lead, DEPP]{.hero-role}
+
+I'm Daniel, a data scientist and project lead at DEPP, the statistical directorate of the French Ministry of Education, where I am the project lead for IDEE, a partnership with J-PAL Europe that gives researchers access to the ministry's administrative data. I did a PhD in economics, which is where my interest in causal inference comes from. Most of my code is R, and I write packages that make empirical work easier to check and to reproduce.
+
+::: {.hero-actions}
+[GitHub](https://github.com/danielrak){.btn .btn-primary}
+[LinkedIn](https://www.linkedin.com/in/daniel-r-807192134){.btn .btn-outline-primary}
+[About](about/index.qmd){.quiet}
+[Projects](projects/index.qmd){.quiet}
+:::
+:::
+
+![](assets/profile.jpg){.hero-photo fig-alt="Portrait of Daniel Rakotomalala" width=120 height=135}
+
+## Experience and education
+
+::: {.timeline}
+
+::: {.timeline-entry}
+::: {.when}
+2024 –
+:::
+::: {.what}
+### Data scientist and IDEE project lead {.unnumbered .unlisted}
+[DEPP, Ministère de l'Éducation nationale, the statistical directorate of the French Ministry of Education]{.org}
+
+Project lead for the IDEE partnership with J-PAL Europe; statistical tooling in R for the directorate.
+:::
+:::
+
+::: {.timeline-entry}
+::: {.when}
+2022 – 2024
+:::
+::: {.what}
+### Data manager, IDEE programme {.unnumbered .unlisted}
+[J-PAL Europe and DEPP]{.org}
+
+Responsible for the administrative-data track of the programme: public data catalogue and secure remote-access platform.
+:::
+:::
+
+::: {.timeline-entry}
+::: {.when}
+2021 – 2022
+:::
+::: {.what}
+### Teaching assistant in statistics and mathematics {.unnumbered .unlisted}
+[Université de La Réunion, ATER contract]{.org}
+
+First-year undergraduate courses; programs that generate varied statistics exercises.
+:::
+:::
+
+::: {.timeline-entry}
+::: {.when}
+2020 – 2021
+:::
+::: {.what}
+### Statistical studies and evaluation officer {.unnumbered .unlisted}
+[Pôle emploi Réunion, regional directorate of the French public employment service]{.org}
+
+Quantitative evaluation of the effect of employment services on return to work.
+:::
+:::
+
+::: {.timeline-entry}
+::: {.when}
+2018 – 2022
+:::
+::: {.what}
+### PhD in economics {.unnumbered .unlisted}
+[Université de La Réunion]{.org}
+
+Essais sur des déterminants de performances scolaires et universitaires à La Réunion, supervised by Yves Croissant.
+:::
+:::
+
+::: {.timeline-entry}
+::: {.when}
+2016 – 2017
+:::
+::: {.what}
+### Master's in applied economics, quantitative methods {.unnumbered .unlisted}
+[Université de La Réunion]{.org}
+
+Quantitative methods and modelling for business; top of the class.
+:::
+:::
+
+:::
+
+## Selected projects
+
+::: {#selected-projects}
+:::
+
+{{< include includes/contact-links.html >}}

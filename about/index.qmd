@@ -1,0 +1,7 @@
+---
+title: "About"
+description: "Who Daniel Rakotomalala is: data scientist and project lead at DEPP, PhD in economics, author of R packages. CV in French."
+canonical-url: https://daniel-r.com/about/
+---
+
+This page is being written. The French CV is available now: [Daniel Rakotomalala, CV (PDF, French)](/cv/Daniel-Rakotomalala-CV-fr.pdf).

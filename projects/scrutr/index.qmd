@@ -1,0 +1,9 @@
+---
+title: "scrutr"
+description: "R package for scrutinising collections of structured datasets: inspect, compare schemas and convert many tables at once."
+categories: [R package, CRAN]
+order: 1
+canonical-url: https://daniel-r.com/projects/scrutr/
+---
+
+This page is being written. In the meantime: [CRAN](https://cran.r-project.org/package=scrutr), [source on GitHub](https://github.com/danielrak/scrutr), [documentation](https://danielrak.github.io/scrutr/).

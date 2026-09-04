@@ -1,0 +1,9 @@
+---
+title: "cryptRopen"
+description: "R package that pseudonymises variables across many datasets with a salted one-way hash, driven by one Excel mask."
+categories: [R package]
+order: 3
+canonical-url: https://daniel-r.com/projects/cryptropen/
+---
+
+This page is being written. In the meantime: [source on GitHub](https://github.com/danielrak/cryptRopen), [documentation](https://danielrak.github.io/cryptRopen/).

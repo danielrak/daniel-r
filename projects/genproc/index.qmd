@@ -1,0 +1,9 @@
+---
+title: "genproc"
+description: "R package that turns one-off iterative procedures into logged, reproducible, parallel and non-blocking runs."
+categories: [R package, CRAN]
+order: 2
+canonical-url: https://daniel-r.com/projects/genproc/
+---
+
+This page is being written. In the meantime: [CRAN](https://cran.r-project.org/package=genproc), [source on GitHub](https://github.com/danielrak/genproc), [documentation](https://danielrak.github.io/genproc/).

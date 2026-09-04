@@ -1,0 +1,26 @@
+<%
+// Project cards: two columns, title as h3 (keeps the heading order h2 > h3),
+// description before the categories, no image. Used by the "Selected
+// projects" listing on Home and by the Projects page. `items` is provided by
+// Quarto, already sorted by the `order` field of each page. The output is
+// markdown, hence the raw HTML fence and the absence of indentation.
+// outputHref is relative to the project root; the site lives at the domain
+// root, so a leading slash makes it valid from any page. The post-render
+// script then turns .../index.html into the directory URL.
+const href = (item) => item.outputHref ? "/" + item.outputHref.replace(/^\/+/, "") : item.path;
+%>
+```{=html}
+<div class="list grid quarto-listing-container-grid dr-grid">
+<% for (const item of items) { %>
+<div class="g-col-1 quarto-grid-item card h-100 card-left" <%= metadataAttrs(item) %>>
+<div class="card-body post-contents">
+<h3 class="no-anchor card-title listing-title"><a href="<%- href(item) %>" class="listing-link"><%= item.title %></a></h3>
+<div class="card-text listing-description"><%= item.description %></div>
+<% if (item.categories && item.categories.length) { %>
+<div class="listing-categories"><% for (const category of item.categories) { %><span class="listing-category"><%= category %></span><% } %></div>
+<% } %>
+</div>
+</div>
+<% } %>
+</div>
+```
