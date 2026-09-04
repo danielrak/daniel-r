@@ -16,12 +16,20 @@ the output directory is touched; the sources never change. Four jobs:
 
 3. No dark theme. Quarto 1.10 generates a dark variant of the theme whenever
    a _brand.yml exists and links it from every page. The site has no dark
-   mode (brief §2), so the dark stylesheet and the duplicate light link are
-   removed; this saves about 500 KB per page before compression.
+   mode (brief §2), so the dark Bootstrap stylesheet, the dark syntax
+   highlighting stylesheet and the duplicate light link are removed. That
+   saves about 500 KB per page before compression and clears a duplicate
+   id="quarto-text-highlighting-styles" that the two highlighting links
+   would otherwise share.
 
 4. listings.json next to listed pages. Quarto's listing script fetches
    listings.json relative to the current page, which 404s on project pages;
    a copy is placed in each folder that a listing links to.
+
+5. Two small fixes to Quarto's output: the navbar toggler's inline onclick, which
+   the Content-Security-Policy forbids and which drives a headroom feature
+   the site does not use (navbar pinned: false), and the "/./" prefix Quarto
+   writes on the 404 page's root-relative links.
 """
 
 import base64
@@ -38,7 +46,17 @@ PLACEHOLDER = "QUARTO_INLINE_SCRIPT_HASHES"
 SCRIPT_RE = re.compile(r"<script(?P<attrs>[^>]*)>(?P<body>.*?)</script>", re.S)
 NON_EXEC_TYPES = ("application/json", "application/ld+json", "text/template")
 HREF_RE = re.compile(r'(?P<attr>href|content)="(?P<url>[^"]*?)index\.html(?P<rest>[#?][^"]*)?"')
-DARK_LINK_RE = re.compile(r'\s*<link[^>]*(?:bootstrap-dark-[^"]*\.css|quarto-color-scheme-extra)[^>]*>', re.S)
+DARK_LINK_RE = re.compile(
+    r'\s*<link[^>]*(?:bootstrap-dark-[^"]*\.css'
+    r'|quarto-syntax-highlighting-dark-[^"]*\.css'
+    r'|quarto-color-scheme-extra)[^>]*>',
+    re.S,
+)
+DARK_FILE_PREFIXES = ("bootstrap-dark-", "quarto-syntax-highlighting-dark-")
+TOGGLER_ONCLICK_RE = re.compile(r'\s*onclick="if \(window\.quartoToggleHeadroom\)[^"]*"')
+# Quarto writes the 404 page's root-relative links as href="/./about/" and the
+# site root as href="/.". Both are valid but neither is the URL scheme.
+DOT_SLASH_RE = re.compile(r'href="/\.(?P<tail>/|")')
 LOC_RE = re.compile(r"<loc>([^<]*?)index\.html</loc>")
 
 
@@ -95,6 +113,8 @@ def main():
             html = fh.read()
         hashes.update(inline_script_hashes(html))
         new_html = DARK_LINK_RE.sub("", html)
+        new_html = TOGGLER_ONCLICK_RE.sub("", new_html)
+        new_html = DOT_SLASH_RE.sub(lambda m: 'href="/' + ('' if m.group("tail") == "/" else '"'), new_html)
         new_html = rewrite_links(path, new_html)
         if new_html != html:
             with open(path, "w", encoding="utf-8") as fh:
@@ -122,11 +142,13 @@ def main():
         print("post_render: sitemap URLs use directory form")
 
     # 3. dark theme files
-    bootstrap_dir = os.path.join(OUTPUT_DIR, "site_libs", "bootstrap")
-    if os.path.isdir(bootstrap_dir):
-        for name in os.listdir(bootstrap_dir):
-            if name.startswith("bootstrap-dark-") and name.endswith(".css"):
-                os.remove(os.path.join(bootstrap_dir, name))
+    for sub in ("bootstrap", "quarto-html"):
+        lib_dir = os.path.join(OUTPUT_DIR, "site_libs", sub)
+        if not os.path.isdir(lib_dir):
+            continue
+        for name in os.listdir(lib_dir):
+            if name.endswith(".css") and name.startswith(DARK_FILE_PREFIXES):
+                os.remove(os.path.join(lib_dir, name))
                 print(f"post_render: removed {name}")
 
     # 4. listings.json next to listed pages

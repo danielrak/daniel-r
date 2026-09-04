@@ -29,7 +29,7 @@ Scale (base 17 px, ratio about 1.2 with hand-set steps): body 1rem / line-height
 
 ## Layout
 
-One column, left-aligned, 44 rem wide, generous vertical rhythm (sections separated by 3.5 rem). The header is a white bar with a 3 px navy rule on its top edge and a hairline under it; name on the left, four links and two icons on the right. Sections open with a short navy rule above the heading. Project cards sit on the light grey band with a navy top rule; no shadow, no rounding. The contact strip is a ruled line of four links. The footer is a full-width grey band.
+One column, left-aligned, 44 rem wide, generous vertical rhythm (sections separated by 3.5 rem). The header is a white bar with a 3 px navy rule on its top edge and a hairline under it; name on the left, four links and two icons on the right. Sections open with a short navy rule above the heading. Project cards sit on the light grey band with a navy top rule; no shadow, no rounding; the whole card is a link. The contact strip is a ruled line holding the email and the phone. The footer is a full-width grey band.
 
 ```
 +---------------------------------------------------------------+  <- 3px navy rule
@@ -39,12 +39,11 @@ One column, left-aligned, 44 rem wide, generous vertical rhythm (sections separa
 |  Daniel Rakotomalala                              [photo 120px] |
 |  Data scientist and project lead, DEPP                          |
 |  Three sentences of introduction in serif ...                   |
-|  [GitHub] [LinkedIn]  About  Projects                           |
 |                                                                 |
 |  ----                                                           |
 |  Experience and education                                       |
 |  ---------------------------------------------------------------|
-|  2024 -      | Data scientist and IDEE project lead              |
+|  since 2024  | Data scientist and IDEE project lead              |
 |              | DEPP, ... (organisation, muted)                   |
 |              | One line on what it involved.                    |
 |  ---------------------------------------------------------------|
@@ -63,7 +62,7 @@ One column, left-aligned, 44 rem wide, generous vertical rhythm (sections separa
 |  +------------------------+  +------------------------+         |
 |                                                                 |
 |  ---------------------------------------------------------------|
-|  Email  x [at] y   Phone  +33 ...   LinkedIn   GitHub           |
+|  Email  x [at] y   Phone  +33 ...                               |
 |  ---------------------------------------------------------------|
 +=================================================================+
 |  (c) 2026 Daniel Rakotomalala    Mentions legales        GH LI  |  <- grey band
@@ -76,7 +75,7 @@ The timeline. It is drawn as a ruled table: a left column of navy dates in the s
 
 ## Motion and states
 
-No decorative motion. Links thicken their underline on hover; buttons darken; focus rings are 3 px navy with a 3 px offset. Transitions of 150 ms on colour only, and none at all under `prefers-reduced-motion: reduce`.
+No decorative motion. Links thicken their underline on hover; a project card darkens slightly and its title underlines; focus rings are 3 px navy with a 3 px offset, drawn around the whole card where the card is the link. Transitions of 150 ms on colour only, and none at all under `prefers-reduced-motion: reduce`.
 
 ## Checked against the list of defaults in the brief
 
@@ -99,3 +98,13 @@ No decorative motion. Links thicken their underline on hover; buttons darken; fo
 | G | Source Sans 3, navy `#1F3D7A`, full navy header band | grey date cells | Same family as F, heavier; Daniel preferred the white header of F. |
 
 The mock-ups live outside the repository; the screenshots were sent to Daniel in the session of 4 September 2026.
+
+## Changed after the first review, 4 September 2026
+
+Daniel's own list, applied the same day. The wireframe and the notes above already reflect these.
+
+- The hero row of buttons (GitHub, LinkedIn, About, Projects) is gone: the navbar and the footer carried the same four destinations.
+- The contact strip keeps the email and the phone only, for the same reason.
+- The timeline's open-ended date reads "since 2024" rather than "2024 –".
+- A project card is clickable over its whole surface, through a stretched link on the title, so the title stays the link's accessible name.
+- The Projects page carries a visually hidden second-level heading, so that the card headings do not skip a level.

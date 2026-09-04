@@ -12,7 +12,9 @@ listing:
     filter-ui: false
 ---
 
-Three R packages and a thesis; each page says what the work is, why it exists, how it is built, where it stands and what I would change.
+Three R packages and a thesis. Each page says what the work is, why it exists and where it stands.
+
+## Projects {.unnumbered .unlisted .visually-hidden}
 
 ::: {#projects}
 :::

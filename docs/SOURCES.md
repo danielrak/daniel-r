@@ -7,23 +7,23 @@ Rule 1 of `CLAUDE.md`: every date, title, employer, publication, package version
 | Claim | Where used | Source |
 | --- | --- | --- |
 | Name "Daniel Rakotomalala" | everywhere | CV; `Authors@R` in the DESCRIPTION files of cryptRopen, scrutr, genproc; answer, 4 Sep 2026 |
-| Role line "Data scientist and project lead, DEPP" | hero, JSON-LD `jobTitle` | CV ("Data scientist, chef de projet IDEE"); wording confirmed by answer, 4 Sep 2026 |
+| Role line "Data scientist and project lead, DEPP" | hero role line, JSON-LD `jobTitle` | CV ("Data scientist, chef de projet IDEE"); wording confirmed by answer, 4 Sep 2026 |
 | Email rakdanielh@gmail.com | contact strip, contact page | CV; answer, 4 Sep 2026 |
 | Phone +33 7 82 50 10 67 | contact strip, contact page | CV ("+ 33 782 50 10 67"); display format confirmed by answer, 4 Sep 2026 |
-| LinkedIn https://www.linkedin.com/in/daniel-r-807192134 | navbar, footer, hero, JSON-LD | Drive file `CV_Daniel_RAKOTOMALALA_Appsilon_EN.docx` (12 May 2026); confirmed by answer, 4 Sep 2026; not fetched (host blocked) |
-| GitHub https://github.com/danielrak | navbar, footer, hero, JSON-LD | CV; repositories fetched |
+| LinkedIn https://www.linkedin.com/in/daniel-r-807192134 | navbar, footer, contact page, JSON-LD | Drive file `CV_Daniel_RAKOTOMALALA_Appsilon_EN.docx` (12 May 2026); confirmed by answer, 4 Sep 2026; not fetched (host blocked) |
+| GitHub https://github.com/danielrak | navbar, footer, contact page, project pages, JSON-LD | CV; repositories fetched |
 | ORCID https://orcid.org/0000-0003-1260-1084 | JSON-LD `sameAs` | answer, 4 Sep 2026; not fetched |
 | Photo | hero, Open Graph fallback | Drive file `Photo_Daniel_Rakotomalala_IDEE.png`, 243 × 315 px, named by Daniel; converted to JPEG |
-| Affiliation "DEPP, Direction de l'évaluation, de la prospective et de la performance, Ministère de l'Éducation nationale" | JSON-LD, timeline | CV |
+| Affiliation "DEPP, Direction de l'évaluation, de la prospective et de la performance, Ministère de l'Éducation nationale" | JSON-LD only | CV. Daniel asked on 4 Sep 2026 (second wave) for the ministry name to come off the timeline, which now names DEPP with the English gloss only; the full official name remains in the JSON-LD. |
 | "Université de La Réunion" as alma mater | JSON-LD, timeline | CV |
 
 ## Hero paragraph
 
 | Claim | Source |
 | --- | --- |
-| Data scientist and project lead at DEPP, the statistical directorate of the French Ministry of Education | CV; gloss from the brief §9 |
+| "a data scientist and data project lead at DEPP, the statistical directorate of the French Ministry of Education" | CV; gloss from the brief §9. Note that the page says "data project lead" here while the role line above it, the meta description and the JSON-LD all say "project lead"; Daniel wrote the paragraph and has been asked which wording should win. |
 | The data project I work on is IDEE, Innovations, Données et Expérimentations en Éducation, a programme on innovations, data and experiments in education | CV ("Chef de projet Innovations, Données et Expérimentations en Education (IDEE)"); wording written by Daniel, answer of 4 Sep 2026, second wave |
-| Link https://www.idee-education.fr/ on the word IDEE | CV (hyperlink on "IDEE"); not fetched (host not tried from the build environment) |
+| Link https://www.idee-education.fr/ on the word IDEE | CV (hyperlink on "IDEE"); not fetched (host blocked from the build environment) |
 | PhD in economics; interest in causal inference | CV (Doctorat en sciences économiques; "Evaluation des politiques publiques / évaluation d'impact : essais randomisés contrôlés, appariement, doubles différences, variables instrumentales, régressions sur une discontinuité"); sentence from the brief's calibration sample |
 | Most code in R; packages that make empirical work easier to check and reproduce | CV ("Niveau avancé sur R – plus de 8 ans"); scrutr and genproc DESCRIPTION files |
 
@@ -31,10 +31,11 @@ Rule 1 of `CLAUDE.md`: every date, title, employer, publication, package version
 
 | Entry | Source |
 | --- | --- |
-| Since 2024, Data scientist and IDEE project lead, DEPP; project lead for the IDEE programme in partnership with J-PAL Europe; statistical tooling and strategic large-scale data work; statistical studies; technical training | CV ("depuis 2024"; "Chef de projet IDEE"; "Outillage statistique pour la DEPP"; "Traitements statistiques à grande échelle"; "Etude statistique, en collaboration avec le Ministère de la Justice"; "Formateur technique pour la DEPP : modélisation statistique"); wording written by Daniel, answer of 4 Sep 2026, second wave |
+| Since 2024, Data scientist and IDEE project lead, DEPP | CV ("Data scientist, chef de projet Innovations, Données et Expérimentations en Education (IDEE) – depuis 2024") |
+| The entry's description: "project lead for the IDEE programme, in partnership with J-PAL Europe; statistical tooling and strategic large-scale data work for the directorate; statistical studies; technical training" | Written by Daniel, answer of 4 Sep 2026, second wave, and used as he wrote it. The CV supports each activity: "Chef de projet IDEE"; "Outillage statistique pour la DEPP"; "Traitements statistiques à grande échelle"; "Etude statistique, en collaboration avec le Ministère de la Justice" (the ministry is deliberately not named on the site); "Formateur technique pour la DEPP : modélisation statistique". Two words come from Daniel rather than the CV and should be read as his own characterisation of his job: "strategic", which has no counterpart in the CV, and the plural of "statistical studies", where the CV has one study. |
 | 2022–2024 Data manager, IDEE programme, J-PAL Europe and DEPP; administrative-data track; public data catalogue; secure remote-access platform | CV ("Data manager / Ingénieur statisticien pour le programme IDEE – CDD 2022 à 2024", "Responsable du volet « données administratives »", "Catalogue public des données", "Plateforme sécurisée d'accès à distance") |
-| Link https://catalogue.depp.education.fr/index.php/home on "public data catalogue" | CV (hyperlink on "Catalogue public des données"); not fetched |
-| 2021–2022 Teaching assistant in statistics and mathematics, Université de La Réunion; undergraduate courses; exercise-generating programs | CV ("Chargé d'enseignements en statistiques et en mathématiques – 2021 à 2022", "L1 AES ... L1 Economie-Gestion", "programmes générant automatiquement des exercices"). The ATER contract is in the CV but Daniel asked for it to be left off the site (answer, 4 Sep 2026, second wave). |
+| Link https://catalogue.depp.education.fr/index.php/home on "public data catalogue" | CV (hyperlink on "Catalogue public des données"); not fetched (host blocked). The CV places the catalogue and the platform under the *depuis 2024* block; they are shown here because the 2022–2024 block calls them "les livrables numériques susmentionnés" and describes Daniel's contribution to each. |
+| 2021–2022 Teaching assistant in statistics and mathematics, Université de La Réunion; undergraduate courses; exercise-generating programs | CV ("Chargé d'enseignements en statistiques et en mathématiques – 2021 à 2022", "L1 AES ... L1 Economie-Gestion", "programmes générant automatiquement des exercices"). Two deliberate departures from the CV, both Daniel's, answer of 4 Sep 2026, second wave: the ATER contract is left off the site, and "undergraduate courses" is broader than the CV's first-year cohorts. |
 | 2020–2021 Statistical studies and evaluation officer, Pôle emploi Réunion; effect of employment services on return to work | CV ("Chargé d'études statistiques et d'évaluation – 2020 à 2021", "Direction régionale Pôle emploi Réunion", "Mesure quantitative de l'impact des services ... sur le retour à l'emploi"). The cohort count is omitted on purpose: the French CV says 15 and the English CV 14. |
 | 2018–2022 PhD in economics, Université de La Réunion, supervised by Yves Croissant | CV; supervisor named by answer, 4 Sep 2026 |
 | Thesis title "Essay on some determinants of academic performances in Reunion Island" | The English title registered on theses.fr, read from that page by Daniel and given in his answer of 4 Sep 2026. Quoted exactly as registered, including "Essay" in the singular and "Reunion Island"; do not correct its English. The host is blocked from the build environment, so it was not fetched here. |
@@ -48,6 +49,9 @@ Rule 1 of `CLAUDE.md`: every date, title, employer, publication, package version
 | scrutr: R package for scrutinising collections of structured datasets; inspect, compare schemas, convert many tables | `DESCRIPTION` Title "Scrutinizing Collections of Structured Datasets" and `README.md` at danielrak/scrutr commit efa1eab |
 | scrutr on CRAN, version 0.3.1 | CRAN mirror github.com/cran/scrutr, `DESCRIPTION` (`Repository: CRAN`, `Date/Publication: 2026-04-25`) |
 | scrutr links: CRAN page, GitHub, documentation site | README badges and `_pkgdown.yml` at commit efa1eab; CRAN page not fetched (host blocked) |
+| genproc links: CRAN page, GitHub, documentation site | README badges and `_pkgdown.yml` at danielrak/genproc commit 734991a; CRAN page not fetched (host blocked) |
+| cryptRopen links: GitHub, documentation site | `DESCRIPTION` URL field and `_pkgdown.yml` at danielrak/cryptRopen commit 21fa725; documentation site not fetched (host blocked) |
+| PhD repository https://github.com/danielrak/phd | CV ("Repo Git dédié à la thèse (sans données) : https://github.com/danielrak/phd"); repository exists (git ls-remote), contents not read |
 | genproc: turns one-off iterative procedures into logged, reproducible, parallel, non-blocking runs | `DESCRIPTION` and `README.md` at danielrak/genproc commit 734991a |
 | genproc on CRAN, version 0.2.0, lifecycle experimental | CRAN mirror github.com/cran/genproc, `DESCRIPTION` (`Date/Publication: 2026-05-12`); README lifecycle badge |
 | cryptRopen: pseudonymises variables across datasets with a salted one-way hash driven by an Excel mask; not on CRAN; submission planned | `DESCRIPTION`, `README.md`, `NEWS.md` ("Submission to CRAN is planned once the package has been validated on production workloads") at danielrak/cryptRopen commit 21fa725; no cran/cryptRopen mirror on 3 Sep 2026; wording confirmed by answer, 4 Sep 2026 |
@@ -64,5 +68,5 @@ Rule 1 of `CLAUDE.md`: every date, title, employer, publication, package version
 
 ## Not verified
 
-- LinkedIn, ORCID, theses.fr and CRAN pages could not be fetched from the build environment; the URLs come from the CV and Daniel's answers.
+- LinkedIn, ORCID, theses.fr, CRAN, idee-education.fr and catalogue.depp.education.fr could not be fetched from the build environment, whose network policy blocks them; the URLs come from the CV hyperlinks and Daniel's answers. Each should be opened once by hand before launch.
 - The pkgdown documentation sites at danielrak.github.io were not fetched; their existence is inferred from the `gh-pages` branches and `_pkgdown.yml` files.

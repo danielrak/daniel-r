@@ -104,8 +104,7 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible,
-.btn:focus-visible {
+button:focus-visible {
   outline: 3px solid $dr-navy;
   outline-offset: 3px;
   box-shadow: none;
@@ -253,7 +252,15 @@ section.level1:has(> p > img.hero-photo) {
     border-radius: 0;
     box-shadow: none;
   }
-  .quarto-grid-item.card:hover { background: darken($dr-band, 3%); }
+  .quarto-grid-item.card:hover { background: darken($dr-band, 4%); }
+
+  // The click target is the whole card, so the keyboard ring belongs on the
+  // card rather than around the few characters of the title.
+  .quarto-grid-item.card:has(a.stretched-link:focus-visible) {
+    outline: 3px solid $dr-navy;
+    outline-offset: 3px;
+  }
+  .quarto-grid-item.card a.stretched-link:focus-visible { outline: none; }
   .quarto-grid-item .card-body { padding: 1rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.35rem; }
   .quarto-grid-item h3.card-title.listing-title,
   .quarto-grid-item h3.card-title.listing-title a {
@@ -284,7 +291,6 @@ section.level1:has(> p > img.hero-photo) {
       font-weight: 400;
       color: $dr-muted;
       opacity: 1;
-      cursor: text;
     }
     .listing-category:not(:last-child)::after { content: ",\00a0"; }
   }
@@ -303,7 +309,6 @@ section.level1:has(> p > img.hero-photo) {
   font-family: $dr-sans;
 
   .contact-label { color: $dr-muted; }
-  a:empty { display: none; }
 }
 
 // Footer band, content aligned on the text column ---------------------------
@@ -338,7 +343,7 @@ footer.footer {
 // Motion: colour transitions only, none when the user asks for none ----------
 
 @media (prefers-reduced-motion: no-preference) {
-  a, .btn { transition: background-color 0.15s ease, color 0.15s ease; }
+  a, .quarto-grid-item.card { transition: background-color 0.15s ease, color 0.15s ease; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }

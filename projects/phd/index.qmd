@@ -1,6 +1,6 @@
 ---
 title: "PhD thesis"
-description: "Essays on determinants of school and university performance in Réunion: age at exams, peer effects, a maths revision platform."
+description: "Determinants of academic performance in La Réunion: age at exams, peer effects and a maths revision platform."
 categories: [PhD, Economics]
 order: 4
 canonical-url: https://daniel-r.com/projects/phd/

@@ -65,7 +65,7 @@ In `index.qmd`, inside `::: {.timeline}`, entries are ordered most recent first.
 ```markdown
 ::: {.timeline-entry}
 ::: {.when}
-2026 –
+since 2026
 :::
 ::: {.what}
 ### Role title {.unnumbered .unlisted}
@@ -76,7 +76,7 @@ One line on what it involved, taken from the CV.
 :::
 ```
 
-Dates use an en dash with spaces (`2022 – 2024`; `2024 –` for a current position).
+Closed dates use an en dash with spaces (`2022 – 2024`); a current position reads `since 2024`.
 
 ## Add a sub-site behind a redirect
 
@@ -116,8 +116,9 @@ Package documentation follows the same pattern with pkgdown sites: the redirect 
 
 1. Content-Security-Policy hashes. Quarto writes a few inline scripts into every page, so `script-src` lists their SHA-256 hashes next to `'self'`; the script computes them and writes them into `_site/_headers` in place of the placeholder `QUARTO_INLINE_SCRIPT_HASHES`. Nothing to do by hand after a Quarto upgrade.
 2. Directory URLs. Links that Quarto writes as `.../index.html`, and the entries of `sitemap.xml`, are rewritten to the `/about/` form of the URL scheme. `_redirects` also sends the `index.html` forms to the directory form.
-3. No dark theme. Quarto 1.10 generates a dark variant of the theme whenever `_brand.yml` exists; the site has none, so the file and its links are removed (about 500 KB per page before compression).
+3. No dark theme. Quarto 1.10 generates dark variants of the Bootstrap and syntax-highlighting stylesheets whenever `_brand.yml` exists; the site has no dark mode, so both files and their links are removed. That saves about 500 KB per page before compression and clears the duplicate `id` the two highlighting links would otherwise share.
 4. `listings.json` is copied next to each listed project page, because Quarto's script requests it relative to the page.
+5. Two small repairs to Quarto's output: the navbar toggler's inline `onclick`, which the Content-Security-Policy forbids and which drives a headroom feature the site does not use, and the `/./` prefix Quarto writes on the 404 page's root-relative links.
 
 ### Security headers
 
