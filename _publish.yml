@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: "13bb5a12-a256-465d-8753-497e6d8eaa98"
+      url: "https://daniel-r.netlify.app"
