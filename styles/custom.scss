@@ -200,22 +200,6 @@ section.level1:has(> p > img.hero-photo) {
   display: block;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  align-items: center;
-  margin-top: 1.5rem;
-  font-family: $dr-sans;
-
-  .btn { padding: 0.55rem 1.1rem; }
-  .btn-primary { color: #fff; background: $dr-navy; border-color: $dr-navy; }
-  .btn-primary:hover { background: $dr-navy-dark; border-color: $dr-navy-dark; }
-  .btn-outline-primary { color: $dr-navy; border-color: $dr-navy; }
-  .btn-outline-primary:hover { background: $dr-band; color: $dr-navy; }
-  .quiet { color: $dr-ink; font-weight: 600; }
-}
-
 // Home: the timeline, drawn as a ruled table ------------------------------
 
 .timeline {
@@ -259,12 +243,17 @@ section.level1:has(> p > img.hero-photo) {
   gap: 1.25rem;
   margin-bottom: 1rem;
 
+  // The title link carries .stretched-link, so its ::after covers the whole
+  // card: the card is clickable everywhere while the link's accessible name
+  // stays the project title. The card must be a positioned ancestor.
   .quarto-grid-item.card {
+    position: relative;
     border-top: 3px solid $dr-navy;
     background: $dr-band;
     border-radius: 0;
     box-shadow: none;
   }
+  .quarto-grid-item.card:hover { background: darken($dr-band, 3%); }
   .quarto-grid-item .card-body { padding: 1rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.35rem; }
   .quarto-grid-item h3.card-title.listing-title,
   .quarto-grid-item h3.card-title.listing-title a {

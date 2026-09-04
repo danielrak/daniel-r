@@ -22,14 +22,7 @@ listing:
 ::: {.hero-body}
 [Data scientist and project lead, DEPP]{.hero-role}
 
-I'm Daniel, a data scientist and project lead at DEPP, the statistical directorate of the French Ministry of Education, where I am the project lead for IDEE, a partnership with J-PAL Europe that gives researchers access to the ministry's administrative data. I did a PhD in economics, which is where my interest in causal inference comes from. Most of my code is R, and I write packages that make empirical work easier to check and to reproduce.
-
-::: {.hero-actions}
-[GitHub](https://github.com/danielrak){.btn .btn-primary}
-[LinkedIn](https://www.linkedin.com/in/daniel-r-807192134){.btn .btn-outline-primary}
-[About](about/index.qmd){.quiet}
-[Projects](projects/index.qmd){.quiet}
-:::
+Hi. I'm Daniel, a data scientist and data project lead at DEPP, the statistical directorate of the French Ministry of Education. The data project I work on is [IDEE](https://www.idee-education.fr/), Innovations, Données et Expérimentations en Éducation, a programme on innovations, data and experiments in education. I did a PhD in economics, which is where my interest in causal inference comes from. Most of my code is R, and I write packages that make empirical work easier to check and to reproduce.
 :::
 
 ![](assets/profile.jpg){.hero-photo fig-alt="Portrait of Daniel Rakotomalala" width=120 height=135}
@@ -40,13 +33,13 @@ I'm Daniel, a data scientist and project lead at DEPP, the statistical directora
 
 ::: {.timeline-entry}
 ::: {.when}
-2024 –
+since 2024
 :::
 ::: {.what}
 ### Data scientist and IDEE project lead {.unnumbered .unlisted}
-[DEPP, Ministère de l'Éducation nationale, the statistical directorate of the French Ministry of Education]{.org}
+[DEPP, the statistical directorate of the French Ministry of Education]{.org}
 
-Project lead for the IDEE partnership with J-PAL Europe; statistical tooling in R for the directorate.
+Project lead for the IDEE programme, in partnership with J-PAL Europe; statistical tooling and strategic large-scale data work for the directorate; statistical studies; technical training.
 :::
 :::
 
@@ -58,7 +51,7 @@ Project lead for the IDEE partnership with J-PAL Europe; statistical tooling in 
 ### Data manager, IDEE programme {.unnumbered .unlisted}
 [J-PAL Europe and DEPP]{.org}
 
-Responsible for the administrative-data track of the programme: public data catalogue and secure remote-access platform.
+Responsible for the administrative-data track of the programme: [public data catalogue](https://catalogue.depp.education.fr/index.php/home) and secure remote-access platform.
 :::
 :::
 
@@ -68,9 +61,9 @@ Responsible for the administrative-data track of the programme: public data cata
 :::
 ::: {.what}
 ### Teaching assistant in statistics and mathematics {.unnumbered .unlisted}
-[Université de La Réunion, ATER contract]{.org}
+[Université de La Réunion]{.org}
 
-First-year undergraduate courses; programs that generate varied statistics exercises.
+Undergraduate courses; built programs that generate varied statistics exercises.
 :::
 :::
 
@@ -82,7 +75,7 @@ First-year undergraduate courses; programs that generate varied statistics exerc
 ### Statistical studies and evaluation officer {.unnumbered .unlisted}
 [Pôle emploi Réunion, regional directorate of the French public employment service]{.org}
 
-Quantitative evaluation of the effect of employment services on return to work.
+Quantitative evaluation of the effect of Pôle emploi employment services on return to work.
 :::
 :::
 
@@ -94,7 +87,7 @@ Quantitative evaluation of the effect of employment services on return to work.
 ### PhD in economics {.unnumbered .unlisted}
 [Université de La Réunion]{.org}
 
-Essais sur des déterminants de performances scolaires et universitaires à La Réunion, supervised by Yves Croissant.
+[Determinants of educational performance in La Réunion](https://theses.fr/2022LARE0044), supervised by Yves Croissant.
 :::
 :::
 
